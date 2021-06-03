@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Post
+from .models import Post, Home
 
 
 # index.html 페이지를 부르는 index 함수
 def index(request):
-    return render(request, 'main/index.html')
-
+    home = Home.objects.get(pk=1)
+    return render(request, 'main/index.html', {'home': home})
 
 # blog.html 페이지를 부르는 blog 함수
 def blog(request):

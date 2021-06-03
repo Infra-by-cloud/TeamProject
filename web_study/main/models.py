@@ -10,3 +10,10 @@ class Post(models.Model):
     # postname이 Post object 대신 나오기
     def __str__(self):
         return self.postname
+
+
+class Home(models.Model):
+    title = models.TextField(blank=True, null=True)
+    background1 = models.ImageField(blank=True)
+    background2 = models.ImageField(blank=True)
+    background3 = models.ImageField(blank=True)
